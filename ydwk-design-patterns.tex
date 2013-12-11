@@ -68,6 +68,19 @@ for (x : list) {
 }
 \end{lstlisting}
 
+\section{Hand made obfuscation}
+
+\begin{lstlisting}[frame=topline, numbers=left]
+public boolean checkForWhat(Collection<String> source,String value) {
+	boolean result=false;
+	Iterator<String> iterator = source.iterator();
+	while (!result && iterator.hasNext()) {
+		result = value.equals(iterator.next());
+	}
+	return result;
+}
+\end{lstlisting}
+
 
 
 \end{document}
