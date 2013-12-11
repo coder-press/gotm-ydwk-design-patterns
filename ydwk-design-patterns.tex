@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper]{book}
+
+\usepackage{anyfontsize}
+\usepackage{scalefnt}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage[inner=2cm,outer=2cm,top=4cm,bottom=4cm]{geometry}
+
+\newcommand{\bigtext}[2]{\begingroup\scalefont{#1} #2\par\endgroup}
+
+\newcommand{\meme}[1]{\vspace*{\fill}\begin{center}{\bigtext{5}{#1}}\end{center}\vspace*{\fill}\pagebreak}
+
+\newcommand{\longmeme}[1]{\vspace*{\fill}\begin{center}{\bigtext{4}{#1}}\end{center}\vspace*{\fill}\pagebreak}
+
+\newcommand{\verylongmeme}[1]{\vspace*{\fill}\begin{center}{\bigtext{3}{#1}}\end{center}\vspace*{\fill}\pagebreak}
+
+\newcommand{\topic}[2]{\chapter{#1}\bigtext{3}{#2}\vspace*{\fill}\pagebreak}
+
+\linespread{1.4}
+
+\renewcommand{\baselinestretch}{1.0}
+
+\definecolor{gray}{rgb}{0.95,0.95,0.95}
+
+\lstset{ %
+backgroundcolor=\color{gray}, 
+basicstyle=\ttfamily,  
+tabsize=2,
+commentstyle=\color{ForestGreen},
+keywordstyle=\color{RedViolet}\ttfamily\bf
+}
+
+\begin{document}
+\lstset{language=Java}
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{3cm}
+
+% Title
+{\LARGE Gang Of Too Many}\\
+\bigtext{5}{\textit{You don't wanna know} Design Patterns}
+ 
+\vfill
+
+% Bottom of the page
+{\today}
+
+\end{center}
+\end{titlepage}
+
+\vspace*{\fill}
+{\noindent \large A terrific read...\\}
+
+\vspace*{\fill}
+\pagebreak
+
+\topic{Blind man's buff}
+
+\section{Dictionary Roulette}
+
+\begin{lstlisting}[frame=topline, numbers=left]
+Map<K,V> map=new Map();
+for (x : list) {
+  putStuffInMap(x,map);
+}
+\end{lstlisting}
+
+
+
+\end{document}
