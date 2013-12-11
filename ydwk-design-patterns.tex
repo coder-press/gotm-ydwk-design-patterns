@@ -81,6 +81,28 @@ public boolean checkForWhat(Collection<String> source,String value) {
 }
 \end{lstlisting}
 
+\section{String based type erasure}
 
+Avoid types if you can to spare some memory somewhere.
+
+\begin{lstlisting}[frame=topline, numbers=left]
+class OneDomainService {
+  Map<String, Object> getMeResult(...) {
+    Map<String, Object> map=new HashMap<>();
+    map.put("name",...);
+    map.put("address",...);
+    return result;
+  }
+}
+
+class OtherDomainService {
+  Result process(Map<String,Object> data) {
+    String name = (String) data.get("name");
+    Address address = (Address) data.get("address");
+    ...
+    return result;
+  }
+}
+\end{lstlisting}
 
 \end{document}
