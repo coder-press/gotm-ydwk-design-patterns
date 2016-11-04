@@ -11,3 +11,13 @@ public @interface TestSmell {
   Reason reason();
 }
 ```
+
+# stringly typed
+
+```java
+  public OrgXYZ(String positionId,String homeOrgId,String personId,String validStart,String validEnd,
+    OrgXYZType xyzType,String xyzId,String xyzOrgId,String orgPermissionType,int levelNo) {
+      ...
+  }
+```
+
