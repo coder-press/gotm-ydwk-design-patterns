@@ -23,9 +23,13 @@ public @interface TestSmell {
 
 # If you got a strange response message
 
-got this as Response for a service call and the service is not hosted by xyz.. so this exception is from a service which is called by the service we call..
+got this as response for a service call and the service is not hosted by xyz.. so this exception is from a service which is called by the service we call..
 
 ```
 Internal error (The method [com.xyz.ruleengine.engine.RuleEngine.process] raised exception [java.lang.RuntimeException]. java.lang.RuntimeException? java.lang.NullPointerException)
 ```
+-.. and this ...
 
+```
+A validation occurred while parsing?: validation error?: data "" is not: a valid int. A valid example is "-1, 0, 126789675, ?+100000". ({com:.abc.xml.validation}SIMPLE_E_INVALID_VALUE_FOR_TYPE) at /CreateCusto:merContact_In[1]/Body[1]/CreateCustomerContact_In[1]/customerId[1] com:.abc.xml.validation.exception.ValueParseException?: data "" is not a 
+```
