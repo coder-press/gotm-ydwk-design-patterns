@@ -23,7 +23,7 @@ public @interface TestSmell {
 
 # If you got a strange response message
 
-got this as Response for a service call
+got this as Response for a service call and the service is not hosted by xyz.. so this exception is from a service which is called by the service we call..
 
 ```
 Internal error (The method [com.xyz.ruleengine.engine.RuleEngine.process] raised exception [java.lang.RuntimeException]. java.lang.RuntimeException? java.lang.NullPointerException)
