@@ -21,3 +21,11 @@ public @interface TestSmell {
   }
 ```
 
+# If you got a strange response message
+
+got this as Response for a service call
+
+```
+Internal error (The method [com.xyz.ruleengine.engine.RuleEngine.process] raised exception [java.lang.RuntimeException]. java.lang.RuntimeException? java.lang.NullPointerException)
+```
+
