@@ -33,3 +33,16 @@ Internal error (The method [com.xyz.ruleengine.engine.RuleEngine.process] raised
 ```
 A validation occurred while parsing?: validation error?: data "" is not: a valid int. A valid example is "-1, 0, 126789675, ?+100000". ({com:.abc.xml.validation}SIMPLE_E_INVALID_VALUE_FOR_TYPE) at /CreateCusto:merContact_In[1]/Body[1]/CreateCustomerContact_In[1]/customerId[1] com:.abc.xml.validation.exception.ValueParseException?: data "" is not a 
 ```
+
+# behavior obfuscation
+
+Guess what this means. And guess what you will get as a result...
+
+```
+public interface XYZ {
+  ...
+  String beforeInsert(UserRow userRow);
+  ...
+}
+```
+Answer: It is the error message if anything goes wrong, null if all went well.
