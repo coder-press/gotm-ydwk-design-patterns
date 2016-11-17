@@ -46,3 +46,11 @@ public interface XYZ {
 }
 ```
 Answer: It is the error message if anything goes wrong, null if all went well.
+
+# sql query builder magic
+
+```
+new StringBuilder()
+				.append(format("select m.%s", MyEntityWrapper.col_id)).append('\n')
+  ...
+```
