@@ -54,3 +54,20 @@ new StringBuilder()
 				.append(format("select m.%s", MyEntityWrapper.col_id)).append('\n')
   ...
 ```
+# annotations and names
+
+```
+//@formatter:off
+@ValidateWithCoyoteMethod.List({
+@ValidateWithCoyoteMethod("validatePaymentCount"),
+@ValidateWithCoyoteMethod("validatePaymentMandant"),
+@ValidateWithCoyoteMethod("validatePaymentAmountForProductOption"),
+@ValidateWithCoyoteMethod("validatePaymentCategory") })
+@XmlElement
+private List<Payment> payments = newArrayList();
+//@formatter:on
+
+@NeitherNullNorEmpty(when = "js: _this.isProductOptionCatalogCategory()")
+@ValidateWithCoyoteMethod("validateFiltersForProductOptionCatalog")
+public List<FilterParamValue> filters = newArrayList();
+```
