@@ -71,3 +71,12 @@ private List<Payment> payments = newArrayList();
 @ValidateWithCoyoteMethod("validateFiltersForProductOptionCatalog")
 public List<FilterParamValue> filters = newArrayList();
 ```
+
+# unit conversion
+
+```
+private int convertToKm(Double distance) {
+distance = (distance / 1000);
+return new BigDecimal(distance).setScale(0, RoundingMode.HALF_UP).intValue();
+}
+```
