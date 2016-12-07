@@ -80,3 +80,19 @@ distance = (distance / 1000);
 return new BigDecimal(distance).setScale(0, RoundingMode.HALF_UP).intValue();
 }
 ```
+
+# roll my own instance cache
+
+```
+public OrgPersonSalaryDay getDay(String date) {
+
+  OrgPersonSalaryDay day = this.sicknessDays.get(date);
+  if (day == null) {
+    day = new OrgPersonSalaryDay(date);
+    this.sicknessDays.put(date, day);
+   }
+   this.sicknessDays.put(date, day);
+
+   return day;
+}
+```
