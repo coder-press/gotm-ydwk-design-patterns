@@ -96,3 +96,17 @@ public OrgPersonSalaryDay getDay(String date) {
    return day;
 }
 ```
+# clean code at its best
+
+```
+public String createResponseSubject() {
+  String[] subjectParts = subject.split(SUBJECT_SEPARATOR);
+  if (subjectParts.length == 5) {
+    String temp = subjectParts[4];
+    subjectParts[4] = subjectParts[3];
+    subjectParts[3] = temp;
+  }
+  subjectParts[0] = PortMessageParser.PORT_RESPONSE_TAG;
+  return StringUtils.join(subjectParts, SUBJECT_SEPARATOR);
+}
+```
