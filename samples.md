@@ -121,3 +121,16 @@ if (dateAbsent[i].substring(5, 7).equals("02") && dateYear[1] > dateYear[i]) {
 ...
 }
 ```
+
+Guess what commes next. Yes:
+
+```
+if (dateAbsent[i].substring(5, 7).equals("03") && dateYear[1] > dateYear[i]) {
+...
+}
+...
+if (dateAbsent[i].substring(5, 7).equals("12") && dateYear[1] > dateYear[i]) {
+...
+}
+```
+
