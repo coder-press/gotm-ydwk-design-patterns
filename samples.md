@@ -110,3 +110,14 @@ public String createResponseSubject() {
   return StringUtils.join(subjectParts, SUBJECT_SEPARATOR);
 }
 ```
+
+# date calculations
+
+```
+if (dateAbsent[i].substring(5, 7).equals("01") && dateYear[1] > dateYear[i]) {
+...
+}
+if (dateAbsent[i].substring(5, 7).equals("02") && dateYear[1] > dateYear[i]) {
+...
+}
+```
