@@ -134,3 +134,30 @@ if (dateAbsent[i].substring(5, 7).equals("12") && dateYear[1] > dateYear[i]) {
 }
 ```
 
+# builder
+
+```
+...
+public Address(Builder builder) {
+  ...
+  this.country = builder.country;
+  this.addressAddition = builder.addressAddition;
+  ...
+  if (builder.addressType == AdrType.PUBLIC) {
+    this.privacyFilter = new PublicPrivacyFilter();
+  } else {
+    this.privacyFilter = new PrivatePrivacyFilter();
+  }
+}
+...
+```
+
+## if one builder is not enough
+
+```
+...
+public ShipmentBuilder(ShipmentAddressBuilder addressBuilder) {
+  ...
+}
+...
+```
