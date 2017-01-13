@@ -136,6 +136,7 @@ if (dateAbsent[i].substring(5, 7).equals("12") && dateYear[1] > dateYear[i]) {
 
 # builder
 
+## you missed it a little bit
 ```
 ...
 public Address(Builder builder) {
@@ -160,4 +161,25 @@ public ShipmentBuilder(ShipmentAddressBuilder addressBuilder) {
   ...
 }
 ...
+```
+
+## loose coupling ftw
+
+```
+public class TripBuilder {
+  ...
+  public TripBuilder with() {
+    return new TripBuilder(this);
+  }
+  ...
+}
+```
+
+
+```
+public class Trip {
+  public static TripBuilder builder() {
+    return new TripBuilder();
+  }
+}
 ```
