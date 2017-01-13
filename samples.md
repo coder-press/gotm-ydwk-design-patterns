@@ -166,20 +166,14 @@ public ShipmentBuilder(ShipmentAddressBuilder addressBuilder) {
 ## loose coupling ftw
 
 ```
-public class TripBuilder {
-  ...
-  public TripBuilder with() {
-    return new TripBuilder(this);
-  }
-  ...
-}
-```
-
-
-```
 public class Trip {
+
   public static TripBuilder builder() {
     return new TripBuilder();
+  }
+
+  public TripBuilder with() {
+    return new TripBuilder(this);
   }
 }
 ```
