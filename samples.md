@@ -110,8 +110,9 @@ public String createResponseSubject() {
   return StringUtils.join(subjectParts, SUBJECT_SEPARATOR);
 }
 ```
+# calculations
 
-# date calculations
+## date calculations
 
 ```
 if (dateAbsent[i].substring(5, 7).equals("01") && dateYear[1] > dateYear[i]) {
@@ -132,6 +133,12 @@ if (dateAbsent[i].substring(5, 7).equals("03") && dateYear[1] > dateYear[i]) {
 if (dateAbsent[i].substring(5, 7).equals("12") && dateYear[1] > dateYear[i]) {
 ...
 }
+```
+
+## clean code calculation
+
+```
+income = add(multiply(multiply(multiply(salaryOfMonth, divide(workD, 100)), distNumber), 12), moving);
 ```
 
 # builder
