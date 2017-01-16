@@ -184,3 +184,24 @@ public class Trip {
   }
 }
 ```
+
+# lambdas
+
+## to throw exception
+
+```
+private <T> Supplier<T> abort(Class<T> exception) {
+  return () -> {
+    try {
+      return exception.newInstance();
+    } catch (InstantiationException | IllegalAccessException e) {
+      throw new RuntimeException(e);
+    }
+  };
+}
+
+...
+
+throw abort(MyException.class).get();
+```
+
