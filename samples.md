@@ -205,3 +205,34 @@ private <T> Supplier<T> abort(Class<T> exception) {
 throw abort(MyException.class).get();
 ```
 
+# bean or not to be
+
+```
+public String getColumn(int ix) {
+  
+  if (ix == 1) {
+  return this.column1;
+  }
+  if (ix == 2) {
+  return this.column2;
+  }
+  if (ix == 3) {
+  return this.column3;
+  }
+  if (ix == 4) {
+  return this.column4;
+  }
+  if (ix == 5) {
+  return this.column5;
+  }
+  if (ix == 6) {
+  return this.column6;
+  }
+  if (ix == 7) {
+  return this.column7;
+  ...
+  if (ix == 40) {
+  return this.column40;
+}
+```
+
