@@ -80,8 +80,11 @@ distance = (distance / 1000);
 return new BigDecimal(distance).setScale(0, RoundingMode.HALF_UP).intValue();
 }
 ```
+# Cache
 
-# roll my own instance cache
+Caching is hard, so build your own.. always.
+
+## roll my own instance cache
 
 ```
 public OrgPersonSalaryDay getDay(String date) {
@@ -96,6 +99,25 @@ public OrgPersonSalaryDay getDay(String date) {
    return day;
 }
 ```
+
+## reuse instances
+
+```
+  private static volatile UrlPathCacheEntry lastUrlPath = new UrlPathCacheEntry("", "");
+
+  public static String getUrlPath(@Nonnull String contextPath) {
+    String nonNullContext = Preconditions.nonNull(contextPath, "contextPath");
+
+    UrlPathCacheEntry cached = lastUrlPath;
+    if (cached.contextPath.equals(nonNullContext) && cached.path.equals(getServletPath())) {
+      return cached.urlPath;
+    }
+
+    lastUrlPath = cached = new UrlPathCacheEntry(contextPath, getServletPath());
+    return cached.urlPath;
+  }
+```
+
 # clean code at its best
 
 ```
