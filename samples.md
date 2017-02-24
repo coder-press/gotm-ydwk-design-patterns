@@ -257,4 +257,10 @@ public String getColumn(int ix) {
   return this.column40;
 }
 ```
+# equals or not?
 
+```
+public static <T, U> BiPredicate<T,U> valuesDiffer() {
+  return (t, u) -> !Optional.ofNullable(t).equals(Optional.ofNullable(u));
+}
+```
